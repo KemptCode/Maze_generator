@@ -70,16 +70,16 @@ while len(nodesInReach) > 0:
 
 
 # pillow represenation
-scale = 2
-S_WIDTH = X_WIDTH * scale - 1
-S_HEIGHT = Y_HEIGHT * scale - 1
+SCALE = 2
+S_WIDTH = X_WIDTH * SCALE - 1
+S_HEIGHT = Y_HEIGHT * SCALE - 1
 
 img = Image.new('RGB',(S_WIDTH,S_HEIGHT))
 draw = ImageDraw.Draw(img)
 
 # Represent the edges
 for edge in edges:
-    draw.rectangle((tuple(map(lambda x: x * scale, edge[1])), tuple(map(lambda x: x * scale, edge[2]))),fill='White')
+    draw.line((tuple(map(lambda x: x * SCALE, edge[1])), tuple(map(lambda x: x * SCALE, edge[2]))),fill='White', width=1)
 
 # Save the picture
-img.save('maze_5.png')
+img.save('maze_10.png')
